@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: check
+  namespace: network
+  labels:
+    rule: one
+    env: backend
+spec:
+ containers:
+ - image: busybox:1.28
+   name: check
+   command: ["/bin/sh","-c"]
+   args:
+   - sleep "45000"
+  
