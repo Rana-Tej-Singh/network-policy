@@ -9,6 +9,7 @@ fi
 echo ""
 echo -n "Changing Namespace..."
 sleep 1
+echo ""
 kubectl config set-context $(kubectl config current-context) --namespace=network
 echo ""
 sleep 1 
