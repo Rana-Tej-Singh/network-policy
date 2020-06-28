@@ -1,0 +1,28 @@
+kind: Service
+metadata:
+  namespace: network
+  name: nginx
+apiVersion: v1
+spec:
+   ports:
+   - port: 80
+     targetPort: 80
+   selector:
+     rule: one
+     env: frontend
+---
+kind: Pod
+apiVersion: v1
+metadata:
+   name: nginx
+   namespace: network
+   labels:
+      env: frontend
+      rule: one
+spec:
+  containers:
+   - image: nginx
+     name: nginx
+     ports:
+     - containerPort: 80
+     
