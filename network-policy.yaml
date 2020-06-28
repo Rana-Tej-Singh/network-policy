@@ -1,0 +1,11 @@
+# Deny all
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+   namespace: network
+   name: deny-traffic
+spec:
+   podSelector: {}       # Selects all pods in the current namespace
+ # If we will not mention any policy type, then by default it takes ingress type  
+   ingress: []           # Block all ingress traffic, Empty array indicates nothing is whitelisted
